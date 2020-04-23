@@ -2,4 +2,4 @@ function autocompelte() {
 
 }
 
-module.exports = autocompelte;
+module.exports = autocomplete;
