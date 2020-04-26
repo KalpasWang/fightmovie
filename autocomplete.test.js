@@ -23,22 +23,13 @@ describe('test left drpdown', () => {
     await page.reload();
   });
 
-  it('type "avan" should return no results', async () => {
+  it('type "av" should show no one item with text "Too many results"', async () => {
     // await expect(page).toMatchElement('title', {text: 'fightmovie'});
     await page.tap('#input-left');
     await page.type('#input-left', 'avan');
-    await expect(page).toMatchElement('ul + li', {text: 'No Results'});
+    await page.waitFor('#result-left div');
+    await expect(page).toMatchElement('#result-left + div', {text: 'No Results'});
 
   });
-  it.todo('input "avangers" should return 10 results');
+  it.todo('input "avangers" should show 10 results');
 });
-
-// describe('Google', () => {
-//   beforeEach(async () => {
-//     await page.goto('https://google.com');
-//   });
-
-//   it('should be titled "Google"', async () => {
-//     await expect(page).toMatch('Google');
-//   });
-// });
