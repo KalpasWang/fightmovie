@@ -27,7 +27,7 @@ inputLeft.addEventListener('input', async e => {
         </div>
       `;
     } else {
-      resultLeft.innerHTML = `<div id="autocomplete"></div>`;
+      resultLeft.innerHTML = `<div id="autocomplete" class=""></div>`;
       const autocomplete = document.querySelector('#autocomplete');
 
       for (let movie of data) {

@@ -24,12 +24,16 @@ describe('test left drpdown', () => {
   });
 
   it('type "av" should show no one item with text "Too many results"', async () => {
-    // await expect(page).toMatchElement('title', {text: 'fightmovie'});
     await page.tap('#input-left');
     await page.type('#input-left', 'av');
     await page.waitFor('#result-left div');
     await expect(page).toMatchElement('#result-left div p', {text: 'Too many results.'});
 
   });
-  it.todo('input "avangers" should show 10 results');
+  it('input "avangers" should show 10 results', async () => {
+    await page.tap('#input-left');
+    await page.type('#input-left', 'avengers');
+    await page.waitFor('#result-left div');
+    await expect(page).toMatchElement('#result-left #autocomplete div:nth-child(1) p', {text: 'The Avengers (2012)'});
+  });
 });
