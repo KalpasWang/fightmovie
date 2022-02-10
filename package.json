@@ -17,7 +17,7 @@
   "devDependencies": {
     "expect-puppeteer": "^4.4.0",
     "jest": "^25.4.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "puppeteer": "^3.0.1"
   }
 }
